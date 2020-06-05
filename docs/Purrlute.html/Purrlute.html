@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid;
+    background-color: rgb (255, 240, 255);
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+var myPurrlute;
+var myPurrluteB;
+
+var myBubbleA;
+var myBubbleB;
+var myBubbleC;
+var myBubbleD;
+var myBubbleE;
+
+var myBubbleEA;
+var myBubbleEB;
+var myBubbleEC;
+var myBubbleED;
+
+var myBubbleCA;
+var myBubbleCB;
+var myBubbleCC;
+var myBubbleCD;
+
+var doorA;
+var doorB;
+var doorC;
+var doorD;
+
+var treeA;
+var treeB;
+var treeC;
+var treeD;
+var treeE;
+
+var stumpA;
+var stumpB;
+var stumpC;
+var stumpD;
+var stumpE;
+
+var cageA;
+var cageB;
+var cageC;
+var cageD;
+
+var standA;
+var standB;
+var standC;
+var standD;
+
+var leafA;
+var leafB;
+var leafC;
+var leafD;
+
+var lightA;
+var lightB;
+var lightC;
+
+var animalA;
+var animalB;
+var animalC;
+var animalD;
+
+var wallscrollA;
+var wallscrollB;
+var health = 5;
+var startPage;
+var startPages = 0;
+
+var myTextA;
+var myTextB;
+var myTextC;
+var myTextD;
+var myTextE;
+
+var myTextAA;
+var myTextAAA;
+var myTextAB;
+var myTextABA;
+var myTextABB;
+var myTextAC;
+var myTextACA;
+var myTextACB;
+var myTextAD;
+var myTextADA;
+var myTextADD;
+
+var myTextBA;
+var myTextBB;
+var myTextBBA;
+var myTextBBB;
+var myTextBC;
+var myTextBD;
+var myTextBDA;
+var myTextBDB;
+var myTextBE;
+var myTextBF;
+var myTextBFA;
+var myTextBFB;
+
+var myTextCA;
+var myTextCB;
+var myTextCC;
+var myTextCD;
+
+
+var myTextDA;
+var myTextDB;
+var myTextDC;
+
+
+function startGame() {
+    myTextA = new component("20px", "Century", "black", 40, 480, "text");
+    myTextB = new component("20px", "Century", "black", 340, 480, "text");
+    myTextC = new component("20px", "Century", "black", 925, 480, "text");
+    myTextD = new component("20px", "Century", "black", 1245, 480, "text");
+    myTextE = new component("25px", "Century", "green", 625, 40, "text");
+
+    myTextEA = new component("25px", "Century", "red", 680, 40, "text");
+    myTextEB = new component("25px", "Century", "brown", 650, 40, "text");
+    myTextEC = new component("25px", "Century", "orange", 660, 40, "text");
+    myTextED = new component("25px", "Century", "blue", 660, 40, "text");
+
+    myTextAA = new component("20px", "Century", "black", 150, 150, "text");
+    myTextAAA = new component("20px", "Century", "black", 150, 175, "text");
+    myTextAB = new component("20px", "Century", "black", 400, 310, "text");
+    myTextABA = new component("20px", "Century", "black", 400, 335, "text");
+    myTextABB = new component("20px", "Century", "black", 400, 360, "text");
+    myTextAC = new component("20px", "Century", "black", 750, 150, "text");
+    myTextACA = new component("20px", "Century", "black", 750, 175, "text");
+    myTextACB = new component("20px", "Century", "black", 750, 200, "text");
+    myTextAD = new component("20px", "Century", "black", 935, 300, "text");
+    myTextADA = new component("20px", "Century", "black", 935, 325, "text");
+    myTextADB = new component("20px", "Century", "black", 935, 350, "text");
+
+    myTextBA = new component("20px", "Century", "black", 75, 200, "text");
+    myTextBB = new component("15px", "Century", "black", 75, 225, "text");
+    myTextBBA = new component("15px", "Century", "black", 75, 250, "text");
+    myTextBBB = new component("15px", "Century", "black", 75, 275, "text");
+    myTextBC = new component("20px", "Century", "black", 450, 350, "text");
+    myTextBD = new component("11px", "Century", "black", 450, 370, "text");
+    myTextBDA = new component("11px", "Century", "black", 450, 390, "text");
+    myTextBDB = new component("11px", "Century", "black", 450, 410, "text");
+    myTextBE = new component("20px", "Century", "black", 870, 500, "text");
+    myTextBF = new component("10px", "Century", "black", 870, 520, "text");
+    myTextBFA = new component("10px", "Century", "black", 870, 540, "text");
+    myTextBFB = new component("10px", "Century", "black", 870, 560, "text");
+
+    myTextCA = new component("20px", "Century", "brown", 15, 150, "text");
+    myTextCB = new component("25px", "Century", "brown", 210, 150, "text");
+    myTextCC = new component("25px", "Century", "brown", 990, 150, "text");
+    myTextCD = new component("25px", "Century", "brown", 1210, 150, "text");
+
+    myTextDA = new component("15px", "Century", "black", 220, 270, "text");
+    myTextDB = new component("15px", "Century", "black", 220, 300, "text");
+    myTextDC = new component("15px", "Century", "black", 220, 330, "text");
+
+    myPurrlute = new component(150, 90, "purrR.jpeg", 672.5, 40, "image");
+    myPurrluteB = new component(150, 90, "purrR.jpeg", 672.5, 40, "image");
+
+    cageA = new component(150, 150, "cage.jpeg", 10, 205, "image");
+    cageB = new component(150, 150, "cage.jpeg", 210, 205, "image");
+    cageC = new component(150, 150, "cage.jpeg", 990, 205, "image");
+    cageD = new component(150, 150, "cage.jpeg", 1185, 205, "image");
+
+    standA = new component(150, 150, "stand.jpeg", 10, 340, "image");
+    standB = new component(150, 150, "stand.jpeg", 210, 340, "image");
+    standC = new component(150, 150, "stand.jpeg", 985, 340, "image");
+    standD = new component(150, 150, "stand.jpeg", 1185, 340, "image");
+
+    leafA = new component(400, 150, "leaf.jpeg", 10, 100, "image");
+    leafB = new component(580, 150, "leaf.jpeg", 230, 250, "image");
+    leafC = new component(550, 150, "leaf.jpeg", 550, 100, "image");
+    leafD = new component(500, 150, "leaf.jpeg", 840, 250, "image");
+
+    lightA = new component(475, 150, "light.jpeg", 10, 150, "image");
+    lightB = new component(475, 150, "light.jpeg", 425, 300, "image");
+    lightC = new component(475, 150, "light.jpeg", 850, 450, "image");
+
+    animalA = new component(150, 150, "elephant.jpeg", 10, 205, "image");
+    animalB = new component(150, 150, "rhino.jpeg", 210, 205, "image");
+    animalC = new component(150, 150, "tiger.jpeg", 985, 205, "image");
+    animalD = new component(150, 150, "orangutan.jpeg", 1185, 205, "image");
+
+    myBubbleA = new component(100, 75, "bubble.jpeg", 10, 440, "image");
+    myBubbleB = new component(100, 75, "bubble.jpeg", 330, 440, "image");
+    myBubbleC = new component(100, 75, "bubble.jpeg", 915, 440, "image");
+    myBubbleD = new component(100, 75, "bubble.jpeg", 1235, 440, "image");
+    myBubbleE = new component(250, 60, "bubble.jpeg", 600, 5, "image");
+
+    myBubbleCA = new component(170, 75, "bubble.jpeg", 10, 110, "image");
+    myBubbleCB = new component(180, 75, "bubble.jpeg", 200, 110, "image");
+    myBubbleCC = new component(180, 75, "bubble.jpeg", 980, 110, "image");
+    myBubbleCD = new component(160, 75, "bubble.jpeg", 1185, 110, "image");
+
+    myBubbleEA = new component(250, 60, "bubble.jpeg", 600, 5, "image");
+    myBubbleEB = new component(250, 60, "bubble.jpeg", 600, 5, "image");
+    myBubbleEC = new component(250, 60, "bubble.jpeg", 600, 5, "image");
+    myBubbleED = new component(250, 60, "bubble.jpeg", 600, 5, "image");
+
+    doorA = new component(100, 75, "treePortal.jpeg", 10, 525, "image");
+    doorB = new component(100, 75, "treePortal.jpeg", 330, 525, "image");
+    doorC = new component(100, 75, "treePortal.jpeg", 915, 525, "image");
+    doorD = new component(100, 75, "treePortal.jpeg", 1235, 525, "image");
+
+    treeA = new component(234, 450, "trees.jpeg", 0, 150, "image");
+    treeB = new component(234, 450, "trees.jpeg", 300, 150, "image");
+    treeC = new component(234, 450, "trees.jpeg", 600, 150, "image");
+    treeD = new component(234, 450, "trees.jpeg", 900, 150, "image");
+    treeE = new component(234, 450, "trees.jpeg", 1200, 150, "image");
+
+    stumpA = new component(156, 300, "stump.jpeg", 0, 300, "image");
+    stumpB = new component(156, 300, "stump.jpeg", 300, 300, "image");
+    stumpC = new component(156, 300, "stump.jpeg", 600, 300, "image");
+    stumpD = new component(156, 300, "stump.jpeg", 900, 300, "image");
+    stumpE = new component(156, 300, "stump.jpeg", 1200, 300, "image");
+
+    startPage = new component(1345, 610, "Titlescreen.jpeg", 0, 0, "image");	
+    myGame = new component(1345, 280, "tree.jpeg", 0, 0, "image");
+    myGameLab.start();
+}
+
+var myGameLab = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 1345;
+        this.canvas.height = 600;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameLab, 20);
+	window.addEventListener('keydown', function (e) {
+            myGameLab.keys = (myGameLab.keys || []);
+            myGameLab.keys[e.keyCode] = (e.type == "keydown");
+        })
+        window.addEventListener('keyup', function (e) {
+            myGameLab.keys[e.keyCode] = (e.type == "keydown");            
+        })
+    }, 
+    beam : function() {
+
+	window.addEventListener('keyup', function (e) {
+            myGameLab.keys = (myGameLab.keys || []);
+            myGameLab.keys[e.keyCode] = (e.type == "keyup");
+        })
+        window.addEventListener('keydown', function (e) {
+            myGameLab.keys[e.keyCode] = (e.type == "keyup");            
+        })
+    }, 
+    clear : function(){
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+	stop : function(){
+		clearInterval(this.function);
+    }
+}
+
+function component(width, height, color, x, y, type) {
+    this.type = type; 
+    if (type == "image") {
+        this.image = new Image();
+        this.image.src = color;
+    }
+    this.width = width;
+    this.height = height;
+    this.speed = 0;
+    this.x = x;
+    this.y = y; 
+    this.gravity = 0.01;
+    this.gravitySpeed = 0;
+    
+    this.update = function() {
+        ctx = myGameLab.context; 
+        if (type == "image") {
+            ctx.drawImage(this.image,
+            this.x,
+            this.y,
+            this.width, this.height);
+   }
+	else if (this.type =="text") {
+ 	ctx.font = this.width + " " + this.height;
+      	ctx.fillStyle = color;
+     	 ctx.fillText(this.text, this.x, this.y);
+
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+
+
+this.newWall = function() {
+	this.hitSprint(); 
+	
+     }  
+
+
+    this.newMov = function() {
+    	this.gravitySpeed += this.gravity;
+        this.x += this.speedX;
+        this.y += this.speedY + this.gravitySpeed;
+	this.hitBottom();
+	this.hitPiece(); 
+	this.hitMove();
+	this.hitSprint();
+}
+    
+    this.crashWith = function(otherobj) {
+     	var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+        	crash = false;
+        }
+        return crash;
+     }
+     
+
+    this.enemyPull = function() {
+	if (this.y > PurrluteJr.y) {this.y += -0.5;}
+	else if (this.y < myPiece.y) {this.y += 0.5;}	
+	else {this.y += 0;}
+
+	if (this.x > myPiece.x) {this.x += -0.5; this.image.src = "stalkyO.jpeg";}
+	else if (this.x < myPiece.x) {this.x += 0.5; this.image.src = "stalkyER.jpeg";}
+	else {this.x += 0;}
+
+    }
+
+
+this.islandSide = function() {
+        var rockbot = myRock.width - this.width;
+	if (this.x > rockbot) {
+            this.x = rockbot;
+            this.gravitySpeed = 0;
+        }
+    } 
+
+this.islandRight = function() {
+        var rockbott = myRock.width - this.width;
+	if (this.x < -rockbott + rockbott) {
+            this.x = -rockbott + rockbott;
+            this.gravitySpeed = 0;
+        }
+    } 
+
+
+    this.hitBottom = function() {
+        var rockbottom = myGameLab.canvas.height - this.height;
+	if (this.y > rockbottom) {
+            this.y = rockbottom;
+            this.gravitySpeed = 0;
+        }
+    } 
+    this.hitPiece = function() {
+        var enemymove = myGameLab.canvas.width - this.width;
+	if (this.x > enemymove) {
+            this.x = enemymove;
+	    this.gravitySpeed = 0;     
+        }
+     } 
+  this.hitMove = function() {
+        var sprintplaq = myGameLab.canvas.height - this.height;
+	if (this.y < -sprintplaq) {
+            this.y = -sprintplaq;
+            this.gravitySpeed = 0;
+        }
+    } 
+   this.hitBlock = function() {
+        var sprintblock = myGameLab.canvas.height - this.height;
+	if (this.y < -sprintblock + sprintblock) {
+            this.y = -sprintblock + sprintblock;
+            this.gravitySpeed = 0;
+        }
+    } 
+    this.hitSprint = function() {
+        var speedbump = myGameLab.canvas.width - this.width;
+	if (this.x < -speedbump + speedbump) {
+            this.x = -speedbump + speedbump;
+            this.gravitySpeed = 0;
+        }
+    }
+}
+
+function updateGameLab() {
+if (myGameLab.keys && myGameLab.keys[90]) {myPurrlute.x = 672.5; myPurrlute.y = 200;}
+if (startPages < 50) {
+startPages += 1;
+startPage.update();
+} else {
+if (health > 0) {
+    myGameLab.clear();
+    myPurrlute.speedX = 0;
+    myPurrlute.speedY = 0;
+    if (myGameLab.keys && myGameLab.keys[37]) {myPurrlute.speedX = -6;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedX = 0;}}
+    if (myGameLab.keys && myGameLab.keys[39]) {myPurrlute.speedX = 6;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedX = 0;}}
+    if (myGameLab.keys && myGameLab.keys[40]) {myPurrlute.speedY = 5;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedY = 0;}}
+    if (myGameLab.keys && myGameLab.keys[38]) {myPurrlute.speedY = -5;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedY = 0;}}
+
+    if (myGameLab.keys && myGameLab.keys[65]) {myPurrlute.speedX = -6;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedX = 0;}}
+    if (myGameLab.keys && myGameLab.keys[68]) {myPurrlute.speedX = 6;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedX = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedX = 0;}}
+    if (myGameLab.keys && myGameLab.keys[83]) {myPurrlute.speedY = 5;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedY = 0;}}
+    if (myGameLab.keys && myGameLab.keys[87]) {myPurrlute.speedY = -5;
+if (myPurrlute.crashWith(doorA)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorB)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorC)) {myPurrlute.speedY = 0;}
+if (myPurrlute.crashWith(doorD)) {myPurrlute.speedY = 0;}}
+
+    else {myPurrlute.gravity = 0.08;}
+  if (myGameLab.keys && myGameLab.keys[37]) {myPurrlute.image.src = "purrL.jpeg";}
+  if (myGameLab.keys && myGameLab.keys[39]) {myPurrlute.image.src = "purrR.jpeg";}
+  if (myGameLab.keys && myGameLab.keys[65]) {myPurrlute.image.src = "purrL.jpeg";}
+  if (myGameLab.keys && myGameLab.keys[68]) {myPurrlute.image.src = "purrR.jpeg";}
+
+if (myGameLab.keys && myGameLab.keys[88]) {myPurrlute.image.src = "trees.jpeg";}
+
+
+myTextA.text = "Facts";
+myTextB.text = "Solutions";
+myTextC.text = "Wildlife";
+myTextD.text = "Citations";
+myTextE.text = "DEFORESTATION";
+
+var Hub;
+var Hub1;
+myHub = new component(672.5, 610, "tree.jpeg", 0, 0, "image");
+myHub1 = new component(672.5, 610, "tree.jpeg", 672.5, 0, "image");
+myHub.update();
+myHub1.update();
+myPurrlute.newMov();
+myPurrlute.update();
+treeA.update();
+treeB.update();
+treeC.update();
+treeD.update();
+treeE.update();
+myBubbleA.update();
+myBubbleB.update();
+myBubbleC.update();
+myBubbleD.update();
+myBubbleE.update();
+myTextA.update();
+myTextB.update();
+myTextC.update();
+myTextD.update();
+myTextE.update();
+doorA.update();
+doorB.update();
+doorC.update();
+doorD.update();
+
+}
+if (myPurrlute.crashWith(doorA)) {
+	myGameLab.clear();
+    	myPurrluteB.speedX = 0;
+    	myPurrluteB.speedY = 0;
+
+    if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+ 
+    if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[88]) {myPurrluteB.image.src = "stump.jpeg";}
+
+myTextEA.text = "FACTS";
+myTextAA.text = "54.4 million people";
+myTextAB.text = "   Forest marshes comprise three quarters";
+myTextAC.text = "Half of North America's forests";
+myTextAD.text = "               3.9 million square miles of trees";
+
+myTextAAA.text = "have forest related jobs.";
+myTextABA.text = "of the worlds fresh water and tropical forsets";
+myTextACA.text = "have been chopped down between";
+myTextADA.text = "             and forests have been chopped";
+
+myTextABB.text = "contribute to 23% carbon dioxide removal.";
+myTextACB.text = "the 16 to later 18 hundreds.";
+myTextADB.text = "down since the beginning of the 20th century.";
+
+var myGame;
+myGame = new component(1345, 610, "deforest.jpeg", 0, 0, "image");
+myGame.update();
+leafA.update();
+leafB.update();
+leafC.update();
+leafD.update();
+myBubbleEA.update();
+
+myTextAA.update();
+myTextAB.update();
+myTextAC.update();
+myTextAD.update();
+myTextAAA.update();
+myTextABA.update();
+myTextABB.update();
+myTextACA.update();
+myTextACB.update();
+myTextADA.update();
+myTextADB.update();
+myTextEA.update();
+
+myPurrluteB.newMov();
+myPurrluteB.update();
+stumpA.update();
+stumpB.update();
+stumpC.update();
+stumpD.update();
+stumpE.update();
+	
+}
+
+if (myPurrlute.crashWith(doorB)) {
+	myGameLab.clear();
+    	myPurrluteB.speedX = 0;
+    	myPurrluteB.speedY = 0;
+
+    if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+ 
+    if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[88]) {myPurrluteB.image.src = "stree.jpeg";}
+
+if (myPurrluteB.crashWith(lightA)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+
+
+if (myPurrluteB.crashWith(lightB)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+
+
+if (myPurrluteB.crashWith(lightC)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+
+myTextEB.text = "SOLUTIONS";
+myTextBA.text = "Driving Question:";
+
+myTextBB.text = "How can we, the community, minimize the effects";
+myTextBBA.text = "of deforestation globally, so that we can better prepare";
+myTextBBB.text = "the Sustainable Development Goals for the future?";
+
+myTextBC.text = "Promotion of Sustainable life choices:";
+
+myTextBD.text = "Whether recycling occasionally, or by limiting unnecessary consumption, you can help fight";
+myTextBDA.text = "against deforestation by making environmentally sustainable choices, and the more people";
+myTextBDB.text = "know the better, so being vocal about being green is imperative for fighting against deforestation.";
+
+myTextBE.text = "Green Business/Recycling:";
+
+myTextBF.text = "Recycling has a lot of benefits, especially in limiting deforestation, since begin to reuse materials like";
+myTextBFA.text = "paper and wood, which helps decrease the unnecessary cutting of trees. By recycling materials like paper and";
+myTextBFB.text = "wood, we end up consuming less natural resources, as well as decrease national imports for forest related items.";
+
+var myGame;
+myGame = new component(1345, 610, "sunny.jpeg", 0, 0, "image");
+myGame.update();
+lightA.update();
+lightB.update();
+lightC.update();
+myBubbleEB.update();
+myTextBA.update();
+myTextBB.update();
+myTextBBA.update();
+myTextBBB.update();
+myTextBC.update();
+myTextBD.update();
+myTextBDA.update();
+myTextBDB.update();
+myTextBE.update();
+myTextBF.update();
+myTextBFA.update();
+myTextBFB.update();
+myTextEB.update();
+myPurrluteB.newMov();
+myPurrluteB.update();
+	
+}
+
+if (myPurrlute.crashWith(doorC)) {
+	myGameLab.clear();
+    	myPurrluteB.speedX = 0;
+    	myPurrluteB.speedY = 0;
+
+    if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+ 
+    if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[88]) {myPurrluteB.image.src = "dog.jpeg";}
+
+if (myPurrluteB.crashWith(cageA)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+if (myPurrluteB.crashWith(cageB)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+if (myPurrluteB.crashWith(cageC)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+if (myPurrluteB.crashWith(cageD)) {
+	myPurrluteB.gravity = 0;
+	myPurrluteB.gravitySpeed = 0;
+}
+
+myTextEC.text = "WILDLIFE";
+myTextCA.text = "Sumatran Elephant";
+myTextCB.text = "Sumatran Rhino";
+myTextCC.text = "Sumatran Tiger";
+myTextCD.text = "Orangutan";
+
+var myGame;
+myGame = new component(1345, 610, "zoo.jpeg", 0, 0, "image");
+myGame.update();
+standA.update();
+standB.update();
+standC.update();
+standD.update();
+animalA.update();
+animalB.update();
+animalC.update();
+animalD.update();
+cageA.update();
+cageB.update();
+cageC.update();
+cageD.update();
+myBubbleEC.update();
+myBubbleCA.update();
+myBubbleCB.update();
+myBubbleCC.update();
+myBubbleCD.update();
+myTextCA.update();
+myTextCB.update();
+myTextCC.update();
+myTextCD.update();
+myTextEC.update();
+myPurrluteB.newMov();
+myPurrluteB.update();
+	
+}
+
+if (myPurrlute.crashWith(doorD)) {
+	myGameLab.clear();
+    	myPurrluteB.speedX = 0;
+    	myPurrluteB.speedY = 0;
+
+    if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[37]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[39]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[38]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[40]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+
+    if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.speedX = -6}
+    if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.speedX = 6;}
+    if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.speedY = 5;}
+    if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.speedY = -5;}
+else {myPurrluteB.gravity = 0.08;}
+if (myGameLab.keys && myGameLab.keys[65]) {myPurrluteB.image.src = "purrL.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrLW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrLW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[68]) {myPurrluteB.image.src = "purrR.jpeg";
+if (myPurrluteB.speedY < 0) {
+if (myGameLab.keys && myGameLab.keys[87]) {myPurrluteB.image.src = "purrRW.jpeg";}}
+if (myPurrluteB.speedY > 0) {
+if (myGameLab.keys && myGameLab.keys[83]) {myPurrluteB.image.src = "purrRW.jpeg";}}}
+
+if (myGameLab.keys && myGameLab.keys[88]) {myPurrluteB.image.src = "kids.jpeg";}
+
+myTextED.text = "CITATIONS";
+myTextDA.text = "Derouin, Sarah. “Deforestation: Facts, Causes &amp; Effects.” LiveScience, Purch, 6 Nov. 2019, www.livescience.com/27692-deforestation.html.";
+myTextDB.text = "“7 Fantastic Solutions to Deforestation.” Matter Of Trust, matteroftrust.org/7-fantastic-solutions-to-deforestation/.";
+myTextDC.text = "“Solutions to Deforestation.” Greenpeace USA, www.greenpeace.org/usa/forests/solutions-to-deforestation/.";
+
+
+var myGame;
+myGame = new component(1345, 610, "citations.jpeg", 0, 0, "image");
+myGame.update();
+myBubbleED.update();
+myTextDA.update();
+myTextDB.update();
+myTextDC.update();
+myTextED.update();
+myPurrluteB.newMov();
+myPurrluteB.update();
+
+	
+}
+}}
+
+</script>
+</body>
+</html>

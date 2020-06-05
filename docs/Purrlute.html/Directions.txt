@@ -1,0 +1,9 @@
+Directions:
+
+Press Z to go back to the main menu.
+
+Press the arrow keys or WASD keys to move the character.
+
+Press the X key to transform the character into something special.
+
+Touch the Portals to go to the levels.
